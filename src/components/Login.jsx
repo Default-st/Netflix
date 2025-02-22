@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { userStore } from "../utils/store";
+import { USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -64,7 +65,7 @@ const Login = () => {
             const user = userCredential.user;
             updateProfile(user, {
               displayName: inputNameRef?.current?.value,
-              photoURL: "https://avatars.githubusercontent.com/u/57432619?v=4",
+              photoURL: USER_AVATAR,
             })
               .then(() => {
                 // Profile updated!
