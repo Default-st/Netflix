@@ -28,3 +28,10 @@ export const useLanguage = create((set) => ({
   lanuage: "en",
   setLanguage: (lang) => set({ lanuage: lang }),
 }));
+
+export const useSearchedMovieStore = create((set) => ({
+  searchedMovies: [],
+  movieNames: [],
+  setSearchedMovies: (gptMovies, movieList) =>
+    set(() => ({ searchedMovies: movieList, movieNames: gptMovies })),
+}));

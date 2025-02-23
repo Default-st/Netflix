@@ -5,7 +5,7 @@ import { API_OPTIONS } from "../utils/constants";
 const usePopularMovies = () => {
   const { popularMovies, setPopularMovies } = useMovieStore();
   useEffect(() => {
-    getNowPlayingMovies();
+    popularMovies.length === 0 && getNowPlayingMovies();
   }, []);
 
   const getNowPlayingMovies = async () => {

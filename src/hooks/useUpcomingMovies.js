@@ -3,9 +3,9 @@ import { useMovieStore } from "../utils/store";
 import { API_OPTIONS } from "../utils/constants";
 
 const useUpcomingMovies = () => {
-  const { setUpcomingMovies } = useMovieStore();
+  const { upcomingMovies, setUpcomingMovies } = useMovieStore();
   useEffect(() => {
-    getNowPlayingMovies();
+    upcomingMovies?.length === 0 && getNowPlayingMovies();
   }, []);
 
   const getNowPlayingMovies = async () => {

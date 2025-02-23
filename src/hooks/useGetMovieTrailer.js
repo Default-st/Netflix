@@ -3,12 +3,10 @@ import { useMovieStore } from "../utils/store";
 import { API_OPTIONS } from "../utils/constants";
 
 const useGetMovieTrailer = (id) => {
-  const { setTrailer } = useMovieStore();
+  const { trailer, setTrailer } = useMovieStore();
 
   useEffect(() => {
-    if (id) {
-      getMovieVideo(id);
-    }
+    !trailer && getMovieVideo(id);
   }, [id]);
 
   const getMovieVideo = async (id) => {

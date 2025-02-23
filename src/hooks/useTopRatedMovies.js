@@ -3,9 +3,9 @@ import { useMovieStore } from "../utils/store";
 import { API_OPTIONS } from "../utils/constants";
 
 const useTopRatedMovies = () => {
-  const { setTopRatedMovies } = useMovieStore();
+  const { topRatedMovies, setTopRatedMovies } = useMovieStore();
   useEffect(() => {
-    getNowPlayingMovies();
+    topRatedMovies.length === 0 && getNowPlayingMovies();
   }, []);
 
   const getNowPlayingMovies = async () => {

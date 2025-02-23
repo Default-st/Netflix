@@ -3,9 +3,12 @@ import { useMovieStore } from "../utils/store";
 import { API_OPTIONS } from "../utils/constants";
 
 const useNowPlayingMovies = () => {
-  const { setNowPlayingMovies } = useMovieStore();
+  const { nowPlayingMovies, setNowPlayingMovies } = useMovieStore();
+
   useEffect(() => {
-    getNowPlayingMovies();
+    if (nowPlayingMovies?.length === 0) {
+      getNowPlayingMovies();
+    }
   }, []);
 
   const getNowPlayingMovies = async () => {
