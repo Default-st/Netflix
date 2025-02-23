@@ -18,3 +18,13 @@ export const useMovieStore = create((set) => ({
   setUpcomingMovies: (movieData) => set({ upcomingMovies: movieData }),
   setTrailer: (trailerData) => set({ trailer: trailerData }),
 }));
+
+export const useGPTStore = create((set) => ({
+  showGPTSearch: false,
+  setToggleGPT: () => set((state) => ({ showGPTSearch: !state.showGPTSearch })),
+}));
+
+export const useLanguage = create((set) => ({
+  lanuage: "en",
+  setLanguage: (lang) => set({ lanuage: lang }),
+}));

@@ -9,7 +9,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { userStore } from "../utils/store";
-import { USER_AVATAR } from "../utils/constants";
+import { BACKGROUND_IMG, USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -97,11 +97,7 @@ const Login = () => {
     <div className="h-[100vh] w-[100vw]">
       <Header />
 
-      <img
-        className="absolute w-full h-full"
-        src="
-https://assets.nflxext.com/ffe/siteui/vlv3/0cf2c109-3af1-4a9d-87d7-aecfac5fe881/web/IN-en-20250217-TRIFECTA-perspective_c3376e06-9aff-4657-aafb-91256a597b7c_large.jpg"
-      />
+      <img className="absolute w-full h-full" src={BACKGROUND_IMG} />
       <form
         onSubmit={handleFormSubmit}
         className="rounded-lg gap-4 text-white lg:w-1/4 sm:w-1/3 p-10 absolute mx-auto left-0 right-0 my-48 flex flex-col  bg-black opacity-90"
