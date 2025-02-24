@@ -97,7 +97,7 @@ const Login = () => {
     <div className="h-[100vh] w-[100vw]">
       <Header />
 
-      <img className="absolute w-full h-full" src={BACKGROUND_IMG} />
+      <img className="absolute  h-screen object-cover" src={BACKGROUND_IMG} />
       <form
         onSubmit={handleFormSubmit}
         className="rounded-lg gap-4 text-white lg:w-1/4 sm:w-1/3 p-10 absolute mx-auto left-0 right-0 my-48 flex flex-col  bg-black opacity-90"

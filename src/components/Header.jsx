@@ -27,7 +27,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-between items-center w-screen absolute px-8 py-2 bg-gradient-to-b from-black z-10">
+    <div className="flex justify-between items-center w-screen absolute px-8 py-2 bg-gradient-to-b from-black z-10  flex-col md:flex-row">
       <img className="w-44" src={NETFLIX_LOGO} alt="logo" />
 
       {user?.uid?.length > 0 ? (
@@ -51,7 +51,11 @@ const Header = () => {
           >
             {showGPTSearch ? "Home" : "GPTSearch"}
           </button>
-          <img src={user?.photoURL} alt="userIcon" className="w-8 h-8" />
+          <img
+            src={user?.photoURL}
+            alt="userIcon"
+            className="hidden md:block w-8 h-8"
+          />
           <button
             onClick={handleSignOut}
             className="text-white font-bold border cursor-pointer rounded-lg p-2"
